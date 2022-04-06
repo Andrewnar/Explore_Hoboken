@@ -1,0 +1,55 @@
+<article>
+  <h1>
+    {{title}}
+  </h1>
+
+  <img alt="{{title}}" src={{show.image.medium}} class="center" />
+
+  <dl>
+    <dt>Language</dt>
+    <dd>
+      {{#if show.language}}
+        {{show.language}}
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+
+    <dt>Genres</dt>
+    <dd>
+      {{#if show.genres.length}}
+        <ul>
+          {{#each show.genres}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+    <dt>Rating</dt>
+    <dd>
+      {{#if show.rating.average}}
+        {{show.rating.average}}
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+    <dt>Network</dt>
+    <dd>
+      {{#if show.network.name}}
+        {{show.network.name}}
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+    <dt>Summary</dt>
+    <dd>
+      {{#if show.summary}}
+        {{show.summary}}
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+  </dl>
+</article>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/public/main_styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!--Dropdown list and respective css from:
+        https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp-->
+        
+      <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <a href="#news">News</a>
+        <a href="#home">Home</a>
+        
+        
+      </div>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+  </body>
+
+</html>

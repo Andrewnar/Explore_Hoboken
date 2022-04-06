@@ -1,0 +1,17 @@
+<h1 class>{{title}}</h1>
+
+<section>
+  <h2 class = "center">{{showDetails}}</h2>
+  <ul>
+    {{#each shows}}
+      <li>
+        <a href="/show/{{this.show.id}}">{{this.show.name}}</a>
+      </li>
+    {{else}}
+      <p class="show-not-found">We're sorry, but no results were found for
+        {{showDetails}}.</p>
+    {{/each}}
+  </ul>
+
+  <a href="/">Make Another Search!</a>
+</section>
