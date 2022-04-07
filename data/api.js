@@ -36,23 +36,10 @@ async function getActivitiesById(id) {
   };
   const url = `https://api.yelp.com/v3/businesses/${id}`;
 
-  //
-  //  THIS WILL NEED TO BE HANDLED BETTER WITH ERROR CHECKING ETC...
-  //
-
-  let result;
-
-  await axios.get(url, config)
-    .then(res => {
-      //console.log(res.data);
-      result = res.data;
-    })
-    .catch(err => {
-      console.log(err);
-      result = {error: 'botched'}; //wrong way to error check, will fix
-    })
-    return result;
-
+  let res = await axios.get(url, config);
+  let result = res.data;
+  
+  return result;
 }
 
 module.exports = {
