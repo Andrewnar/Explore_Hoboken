@@ -20,8 +20,8 @@ router.post('/searchshows', async(req, res) => {
     try{
         let showDetails = req.body.showSearchTerm;
         showDetails = await validate.checkString(showDetails, "Show details");
-        let shows = await showData.getShowByName(showDetails);
-
+        let shows = await showData.getActivitiesByName(showDetails);
+        console.log(shows);
         res.render('display/found', {shows: shows, showDetails: showDetails, title: "Shows Found"})
         res.status(200);
 
