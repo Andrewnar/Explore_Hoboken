@@ -35,10 +35,29 @@ async function checkWebsite(str){
     return str;
 }
 
+async function checkNum(num) {
+    if(!num) throw `Error: Input: ${num || 'provided variable'} was not given.`;
+    if(typeof num !== 'number') throw `Error: Input: ${num || 'provided variable'} , is not of type number.`;
+}
+
+function checkDateHelp(month, day) {
+    if(!month) throw `Error: month parameter: ${month} not given.`
+    if(!day) throw `Error: day parameter: ${day} not given.`
+    if(month<1 || month > 12) throw `Error: month: ${month} is out of range 1-12.`
+    if(month === 2)
+        if(day < 1 || day > 28) throw `Error: month: ${month} range: 1-28. Day: ${day} was given.`
+    else if(month === 4 || month === 6 || month === 9 || month === 11) 
+        if(day < 1 || day > 30) throw `Error: month: ${month} range: 1-30. Day: ${day} was given.`
+    else
+        if(day < 1 || day > 31) throw `Error: month: ${month} range: 1-31. Day: ${day} was given.`
+}
+
 module.exports = {
     checkString,
     checkStringInArr,
     checkArr,
     checkYear,
     checkWebsite,
+    checkNum,
+    checkDateHelp
 };
