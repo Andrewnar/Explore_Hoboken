@@ -33,12 +33,12 @@ router.post('/searchshows', async(req, res) => {
 
 router.get('/show/:id', async(req, res) => {
     try{
-        await validate.checkString(req.params.id, "ID");
-        let show = await showData.getShowById(req.params.id);
-        let sum = show.summary;
+        // await validate.checkString(req.params.id, "ID");
+        let show = await showData.getActivitiesById(req.params.id);
+        // let sum = show.summary;
         //source for regexp: https://stackoverflow.com/questions/11229831/regular-expression-to-remove-html-tags-from-a-string
-        show.summary = sum.replace(new RegExp('<[^>]*>', 'g'), '')
-        res.render('display/showDetails', {show: show, title: show.name});
+        // show.summary = sum.replace(new RegExp('<[^>]*>', 'g'), '')
+        res.render('display/showdetails', {show: show, title: 'Found'});
         res.status(200);
 
     } catch (e) {

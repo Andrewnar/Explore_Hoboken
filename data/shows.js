@@ -26,13 +26,21 @@ async function getActivitiesByName(name) {
 
 async function getActivitiesById(id) {
   if(!id) throw 'No id inputted.'
-  eCheck.checkNum(Number(id));
-  let link = "http://api.tvmaze.com/shows/" + id.toString();
-  // console.log(link);
-  const { data } = await axios.get(link);
-  // console.log(data);
-  if(data === null) throw `Could not find any shows with id: ${id}.`
-  return data;
+  // id = await validate.checkNum(Number(id));
+  var data = "";
+  var config = {
+    method: "get",
+    url:
+      "https://api.yelp.com/v3/businesses/" + id.toString(),
+    headers: {
+      Authorization:
+        "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx",
+    },
+    data: data,
+  };
+  const { result } = await axios(config);
+  // if(result.data.id === null) throw `Could not find any results with id: ${id}.`
+  return result;
 }
 
 async function getShowById(showId) {

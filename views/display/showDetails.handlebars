@@ -3,23 +3,54 @@
     {{title}}
   </h1>
 
-  <img alt="{{title}}" src={{show.image.medium}} class="center" />
+  <img alt="{{title}}" src={{show.image_url}} class="center" />
 
   <dl>
-    <dt>Language</dt>
+    <dt>Phone Number</dt>
     <dd>
-      {{#if show.language}}
-        {{show.language}}
+      {{#if show.display_phone}}
+        {{show.display_phone}}
       {{else}}
         <p>N/A</p>
       {{/if}}
     </dd>
 
-    <dt>Genres</dt>
+    <dt>Categories</dt>
     <dd>
-      {{#if show.genres.length}}
+      {{#if show.categories.length}}
         <ul>
-          {{#each show.genres}}
+          {{#each show.categories}}
+            <li>{{this.title}}</li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+
+    <dt>Rating</dt>
+    <dd>
+      {{#if show.rating}}
+        {{show.rating}}
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+
+    <dt>Location</dt>
+    <dd>
+      {{#if show.location}}
+        {{show.location}}
+      {{else}}
+        <p>N/A</p>
+      {{/if}}
+    </dd>
+
+    <dt>Photos</dt>
+    <dd>
+      {{#if show.photos.length}}
+        <ul>
+          {{#each show.photos}}
             <li>{{this}}</li>
           {{/each}}
         </ul>
@@ -27,29 +58,15 @@
         <p>N/A</p>
       {{/if}}
     </dd>
-    <dt>Rating</dt>
+
+    <dt>Price</dt>
     <dd>
-      {{#if show.rating.average}}
-        {{show.rating.average}}
+      {{#if show.price}}
+        {{show.price}}
       {{else}}
         <p>N/A</p>
       {{/if}}
     </dd>
-    <dt>Network</dt>
-    <dd>
-      {{#if show.network.name}}
-        {{show.network.name}}
-      {{else}}
-        <p>N/A</p>
-      {{/if}}
-    </dd>
-    <dt>Summary</dt>
-    <dd>
-      {{#if show.summary}}
-        {{show.summary}}
-      {{else}}
-        <p>N/A</p>
-      {{/if}}
-    </dd>
+    
   </dl>
 </article>
