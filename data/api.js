@@ -27,18 +27,30 @@ async function getActivitiesByName(name) {
 async function getActivitiesById(id) {
   if(!id) throw 'No id inputted.'
   // id = await validate.checkNum(Number(id));
-  var data = "";
-  var config = {
-    method: "get",
-    url:
-      "https://api.yelp.com/v3/businesses/" + id.toString(),
+  
+  // console.log(id);
+  
+  // var data = "";
+  // var config = {
+  //   method: "get",
+  //   url:
+  //     `https://api.yelp.com/v3/businesses/${id}`,
+  //   headers: {
+  //     Authorization:
+  //       "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx",
+  //   },
+  //   data: data,
+  // };
+  console.log(`id in route: ${id}`);
+
+  const {result} = await axios.get(`https://api.yelp.com/v3/businesses/${id}`,
+  {
     headers: {
-      Authorization:
-        "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx",
-    },
-    data: data,
-  };
-  const { result } = await axios(config);
+      Authorization: "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx"
+    }
+  });
+
+  console.log(result);
   // if(result.data.id === null) throw `Could not find any results with id: ${id}.`
   return result;
 }

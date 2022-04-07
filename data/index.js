@@ -1,3 +1,3 @@
 module.exports = {
-    shows: require("./shows.js")
-  };
+    api: require("./api.js")
+};
