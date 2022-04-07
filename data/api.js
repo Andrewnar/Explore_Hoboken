@@ -1,43 +1,49 @@
 const axios = require("axios");
 const validate = require("../validation.js");
 
+/*
+  Get all businesses by search name
+*/
 async function getActivitiesByName(name) {
   name = await validate.checkString(name, "Name Parameter");
 
-  var data = "";
-
-  var config = {
-    method: "get",
-    url:
-      "https://api.yelp.com/v3/businesses/search?term=" +
-      name.toString() +
-      "&latitude=40.745255&longitude=-74.034775",
-    headers: {
-      Authorization:
-        "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx",
-    },
-    data: data,
-  };
-
-  let events = await axios(config);
-  //console.log(JSON.stringify(events.data.businesses));
-  return events.data.businesses;
-}
-
-async function getActivitiesById(id) {
-  if(!id) throw 'No id inputted.'
-
   //probably need validation here
 
+  //set header
   const config = {
     headers: {
       Authorization: "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx"
     }
   };
+  //build url
+  const url = `https://api.yelp.com/v3/businesses/search?term=${name}&latitude=40.745255&longitude=-74.034775`;
+
+  let res = await axios.get(url, config); //get response
+  let results = res.data.businesses; //get field from response
+
+  return results;
+
+}
+
+/*
+  Get an activity by its id
+*/
+async function getActivitiesById(id) {
+  if(!id) throw 'no id provided.';
+
+  //probably need validation here
+
+  //set header
+  const config = {
+    headers: {
+      Authorization: "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx"
+    }
+  };
+  //build url
   const url = `https://api.yelp.com/v3/businesses/${id}`;
 
-  let res = await axios.get(url, config);
-  let result = res.data;
+  let res = await axios.get(url, config); //get response
+  let result = res.data; //get field from response
   
   return result;
 }
