@@ -26,58 +26,36 @@ async function getActivitiesByName(name) {
 
 async function getActivitiesById(id) {
   if(!id) throw 'No id inputted.'
-  // id = await validate.checkNum(Number(id));
-  
-  // console.log(id);
-  
-  // var data = "";
-  // var config = {
-  //   method: "get",
-  //   url:
-  //     `https://api.yelp.com/v3/businesses/${id}`,
-  //   headers: {
-  //     Authorization:
-  //       "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx",
-  //   },
-  //   data: data,
-  // };
-  console.log(`id in route: ${id}`);
 
-  const {result} = await axios.get(`https://api.yelp.com/v3/businesses/${id}`,
-  {
+  //probably need validation here
+
+  const config = {
     headers: {
       Authorization: "Bearer rKIPRvkdBZMpPrV0HaZwJUD_4bCgykUYaArNXTZw313YUTn3xWUR4Vccl9XYHW5kI4ww6mPkcenLuFSEwS4OHRuIjvardJxfFLtsYPlaPQX5OiXLWhrJVADMFhJOYnYx"
     }
-  });
+  };
+  const url = `https://api.yelp.com/v3/businesses/${id}`;
 
-  console.log(result);
-  // if(result.data.id === null) throw `Could not find any results with id: ${id}.`
-  return result;
-}
+  //
+  //  THIS WILL NEED TO BE HANDLED BETTER WITH ERROR CHECKING ETC...
+  //
 
-async function getShowById(showId) {
-  showId = await validate.checkString(showId, "showID");
-  let url = "http://api.tvmaze.com/shows/" + showId.toString();
-  const { data } = await axios.get(url);
-  if (Object.keys(data).length < 1) throw "There are no shows with that ID";
-  return data;
-}
+  let result;
 
-async function getShowByName(showName) {
-  showName = await validate.checkString(showName, "Show Name");
-  let url = "http://api.tvmaze.com/search/shows?q=" + showName.toString();
-  const { data } = await axios.get(url);
-  slicedArray = data;
-  if (Object.keys(data).length > 5) {
-    slicedArray = data.slice(0, 5);
-  }
-  slicedArray = Object.assign({}, slicedArray);
-  return slicedArray;
+  await axios.get(url, config)
+    .then(res => {
+      //console.log(res.data);
+      result = res.data;
+    })
+    .catch(err => {
+      console.log(err);
+      result = {error: 'botched'}; //wrong way to error check, will fix
+    })
+    return result;
+
 }
 
 module.exports = {
   getActivitiesByName,
   getActivitiesById,
-  getShowById,
-  getShowByName,
 };

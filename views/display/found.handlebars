@@ -1,15 +1,15 @@
 <h1>{{title}}</h1>
 
 <section>
-  <h2 class = "center">Showing results for: {{showDetails}}</h2>
+  <h2 class = "center">Showing results for: {{searchDetails}}</h2>
   <ul>
-    {{#each shows}}
+    {{#each activities}}
       <li>
-        <a href="/show/{{this.id}}">{{this.name}}</a>
+        <a href="/activity/{{this.id}}">{{this.name}}</a>
       </li>
     {{else}}
       <p class="show-not-found">We're sorry, but no results were found for
-        {{showDetails}}.</p>
+        {{searchDetails}}.</p>
     {{/each}}
   </ul>
 

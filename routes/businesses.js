@@ -16,13 +16,12 @@ router.get('/', async(req, res) => {
     }
 });
 
-router.post('/searchshows', async(req, res) => {
+router.post('/searchactivities', async(req, res) => {
     try{
-        let showDetails = req.body.showSearchTerm;
-        showDetails = await validate.checkString(showDetails, "Show details");
-        let shows = await apiData.getActivitiesByName(showDetails);
-        //console.log(shows);
-        res.render('display/found', {shows: shows, showDetails: showDetails, title: "Results"})
+        let searchDetails = req.body.relevantSearchTerm;
+        searchDetails = await validate.checkString(searchDetails, "Show details");
+        let activities = await apiData.getActivitiesByName(searchDetails);
+        res.render('display/found', {activities: activities, searchDetails: searchDetails, title: "Results"})
         res.status(200);
 
     } catch (e) {
@@ -31,16 +30,12 @@ router.post('/searchshows', async(req, res) => {
     }
 });
 
-router.get('/show/:id', async(req, res) => {
-    try{
-        // await validate.checkString(req.params.id, "ID");
-        console.log(req.params.id);
-        let show = await apiData.getActivitiesById(req.params.id);
-        console.log(show);
-        // let sum = show.summary;
-        //source for regexp: https://stackoverflow.com/questions/11229831/regular-expression-to-remove-html-tags-from-a-string
-        // show.summary = sum.replace(new RegExp('<[^>]*>', 'g'), '')
-        //res.render('display/showdetails', {show: show, title: 'Found'});
+router.get('/activity/:id', async(req, res) => {
+    try {
+        //need to error check
+    
+        let business = await apiData.getActivitiesById(req.params.id);
+        res.render('display/businessDetails', {business: business, title: business.name});
         res.status(200);
 
     } catch (e) {

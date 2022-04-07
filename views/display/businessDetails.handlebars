@@ -1,5 +1,40 @@
 <article>
-    <h1>The Business</h1>
+    <h1>{{title}}</h1>
 
+    <img alt="{{title}}" src={{business.image_url}}/>
+    <p class="error">images seem to be a problem</p>
+
+    <!-- 
+        These are going to have to be checked if they exist 
+        Certain object keys sometimes don't exist (like price)
+        Also feel free to add/remove any of these fields, just samples
+    -->
+    <dl>
+        <dt>Categories:</dt>
+        <dd>
+            <ul>
+            {{#each business.categories}}
+                <li>{{this.title}}</li>
+            {{/each}}
+            </ul>
+        </dd>
+
+        <dt>Price:</dt>
+        <dd>{{business.price}}</dd>
+
+        <dt>Hours:</dt>
+        <dd>{{business.hours.open}}</dd>
+
+        <dt>Overall Rating:</dt>
+        <dd>{{business.rating}}</dd>
+
+        <dt>Phone Number:</dt>
+        <dd>{{business.display_phone}}</dd>
+
+        <dt>Address:</dt>
+        <dd>{{business.location.address1}} {{business.location.city}}, {{business.location.state}}</dd>
+    </dl>
+
+<!-- Gonna want a go back to search results button -->
 
 </article>
