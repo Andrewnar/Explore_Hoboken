@@ -70,3 +70,33 @@
 .error {
   color: red
 }
+
+ul {
+  list-style-type: none;
+}
+
+.entry {
+  display: flex;
+  width: 75%;
+  height: 70px;
+  border-radius: 5px;
+  border: 3px solid gray;
+  align-items:center;
+  justify-content:left;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  background-color: rgb(212, 212, 212);
+}
+
+.entry img {
+  height: 60px;
+  width: auto;
+}
+
+.entry span {
+  padding-left: 10px;
+}
+
+.entry a {
+  padding-left: 10px;
+}
