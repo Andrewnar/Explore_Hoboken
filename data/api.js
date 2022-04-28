@@ -44,6 +44,7 @@ async function getActivitiesById(id) {
 
   let res = await axios.get(url, config); //get response
   let result = res.data; //get field from response
+  console.log(result);
   return result;
 }
 
