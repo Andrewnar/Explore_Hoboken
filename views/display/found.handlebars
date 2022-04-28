@@ -1,21 +1,39 @@
 <h1>{{title}}</h1>
 
 <section>
-  <h2 class = "center">Showing results for: {{searchDetails}}</h2>
+  <h2 class="center">Showing results for: {{searchDetails}}</h2>
   <ul>
-    {{#each activities}}
-      <li>
-        <a href="/activity/{{this.id}}">
-          <div class="entry">
-            <img src={{this.image_url}}>
-            <span>{{this.name}}</span>
+    <div class="container">
+      <div class="row mt-5 justify-content-center">
+      {{#each activities}}
+        <div class="card card-custom mx-2 mb-3">
+          <img class="card-img-top" src= {{this.image_url}} alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below
+              as a natural lead-in to additional content. This content is a
+              little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                ago</small></p>
           </div>
-        </a>
-      </li>
-    {{else}}
-      <p class="error">We're sorry, but no results were found for
-        {{searchDetails}}.</p>
-    {{/each}}
+        </div>
+            <!--
+          <li>
+            
+            <a href="/activity/{{this.id}}">
+              <div class="entry">
+                <img src={{this.image_url}}>
+                <span>{{this.name}}</span>
+              </div>
+            </a>
+          </li>
+          -->
+      {{else}}
+        <p class="error">We're sorry, but no results were found for
+          {{searchDetails}}.</p>
+      {{/each}}
+      </div>
+    </div>
   </ul>
 
   <a href="/">Make Another Search!</a>

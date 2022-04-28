@@ -31,3 +31,7 @@ ul {
 .entry a {
   padding-left: 10px;
 }
+
+.card-custom {
+  max-width: 31%;
+}
