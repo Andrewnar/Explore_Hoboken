@@ -5,5 +5,3 @@ node_modules
 Scratch
 package-lock.json
 
-# DO NOT TOUCH THIS
-tasks/seed.js
