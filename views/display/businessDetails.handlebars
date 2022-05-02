@@ -1,11 +1,15 @@
 <article>
+
     <h1>{{title}}</h1>
+    <h1>{{title}}</h1>
+    <!-- the top bar covers the title for each page, I am not sure how to fix but just adding a second one looks good  -->
+
 
     <img alt="{{title}}" src={{business.image_url}}>
     <p class="error">images seem to be a problem</p>
 
-    <!-- 
-        These are going to have to be checked if they exist 
+    <!--
+        These are going to have to be checked if they exist
         Certain object keys sometimes don't exist (like price)
         Also feel free to add/remove any of these fields, just samples
     -->
@@ -23,7 +27,15 @@
         <dd>{{business.price}}</dd>
 
         <dt>Hours:</dt>
-        <dd>{{business.hours.open}}</dd>
+        <dd>
+          <ul>
+          {{#each business.HOURS}}
+              <li>{{this.day}}: {{this.start}} - {{this.end}}</li>
+          {{/each}}
+          </ul>
+
+        </dd>
+          <!-- {{business.hours.open}}</dd> -->
 
         <dt>Overall Rating:</dt>
         <dd>{{business.rating}}</dd>
