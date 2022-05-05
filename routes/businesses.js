@@ -20,7 +20,7 @@ router.post('/searchactivities', async(req, res) => {
     try{
         let searchDetails = req.body.relevantSearchTerm;
         searchDetails = await validate.checkString(searchDetails, "Show details");
-        let activities = await apiData.getActivitiesByName(searchDetails);
+        let activities = await apiData.searchAllActivities(searchDetails);
         res.render('display/found', {activities: activities, searchDetails: searchDetails, title: "Results"})
         res.status(200);
 
