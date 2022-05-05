@@ -119,7 +119,7 @@ async function searchEntertainmentActivities(name) {
   Search activities by Nightlife
 */
 async function searchNightLifeActivities(name) {
-  name = validation.checkString(name, "'Nightlif' search term");
+  name = validation.checkString(name, "'Nightlife' search term");
 
   //set header
   const config = {
