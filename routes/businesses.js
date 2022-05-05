@@ -20,7 +20,26 @@ router.post('/searchactivities', async(req, res) => {
     try{
         let searchDetails = req.body.relevantSearchTerm;
         searchDetails = await validate.checkString(searchDetails, "Show details");
-        let activities = await apiData.searchAllActivities(searchDetails);
+
+        let activities;
+        //handle category selection
+        switch(req.body.category) {
+            case "food":
+                activities = await apiData.searchFoodActivities(searchDetails);
+                break;
+            case "entertainment":
+                activities = await apiData.searchEntertainmentActivities(searchDetails);
+                break;
+            case "active":
+                activities = await apiData.searchActiveActivities(searchDetails);
+                break;
+            case "nightlife":
+                activities = await apiData.searchNightLifeActivities(searchDetails);
+                break;
+            default: //using default for all or if somehow select gets sent invalid data
+                activities = await apiData.searchAllActivities(searchDetails);
+        }
+
         res.render('display/found', {activities: activities, searchDetails: searchDetails, title: "Results"})
         res.status(200);
 

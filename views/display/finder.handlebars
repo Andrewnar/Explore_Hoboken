@@ -13,21 +13,32 @@
         safety of your home in the blink of an eye.
       </p>
       <form action="/searchactivities" method="POST" id="form1" class = "center">
-        <label for="searchTerm">
+        <label for="searchTerm"> Search: </label>
           <input
             type="text" 
             name="relevantSearchTerm"
             id="searchTerm"
-            placeholder="Search Term"
-          />
+            placeholder="Search Term">
+        
+        <br>
 
-        </label>
+        <label for="category">Select a category to search in</label>
+          <select name="category" id="category">
+            <option value="all">All</option>
+            <option value="food">Food</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="active">Active</option>
+            <option value="nightlife">Night Life</option>
+          </select>
+
+        <br>
+
         <button
           type="submit"
           form="form1"
           value="Submit"
-          class="buttonstyle"
-        >Search</button>
+          class="buttonstyle">
+          Search</button>
       </form>
     </div>
   </div>

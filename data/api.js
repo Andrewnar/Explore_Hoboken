@@ -28,7 +28,6 @@ async function getActivitiesById(id) {
 */
 async function searchAllActivities(name) {
   name = await validation.checkString(name, "'All' search term");
-  console.log(name);
 
   //set header
   const config = {
