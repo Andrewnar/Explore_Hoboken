@@ -5,7 +5,7 @@ const validation = require("../validation.js");
   Get an activity by its id
 */
 async function getActivitiesById(id) {
-  id = validation.checkString(id, "id");
+  id = await validation.checkString(id, "id");
 
   //set header
   const config = {
@@ -27,7 +27,8 @@ async function getActivitiesById(id) {
   Get all businesses by search name
 */
 async function searchAllActivities(name) {
-  name = validation.checkString(name, "'All' search term");
+  name = await validation.checkString(name, "'All' search term");
+  console.log(name);
 
   //set header
   const config = {
@@ -50,7 +51,7 @@ async function searchAllActivities(name) {
   Search activities by food
 */
 async function searchFoodActivities(name) {
-  name = validation.checkString(name, "'Food' search term");
+  name = await validation.checkString(name, "'Food' search term");
 
   //set header
   const config = {
@@ -73,7 +74,7 @@ async function searchFoodActivities(name) {
   Search activities by Active Life
 */
 async function searchActiveActivities(name) {
-  name = validation.checkString(name, "'Active' search term");
+  name = await validation.checkString(name, "'Active' search term");
 
   //set header
   const config = {
@@ -96,7 +97,7 @@ async function searchActiveActivities(name) {
   Search activities by Arts and Entertainment
 */
 async function searchEntertainmentActivities(name) {
-  name = validation.checkString(name, "'Arts and Entertainment' search term");
+  name = await validation.checkString(name, "'Arts and Entertainment' search term");
 
   //set header
   const config = {
@@ -119,7 +120,7 @@ async function searchEntertainmentActivities(name) {
   Search activities by Nightlife
 */
 async function searchNightLifeActivities(name) {
-  name = validation.checkString(name, "'Nightlif' search term");
+  name = await validation.checkString(name, "'Nightlif' search term");
 
   //set header
   const config = {

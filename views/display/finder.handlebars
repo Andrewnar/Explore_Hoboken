@@ -1,30 +1,34 @@
 <article>
-  <h1>{{title}}</h1>
-  <p>Welcome to Explore Hoboken!</p>
-  <p>
-    For those that have been long time residents, visitors, and even prospective students, Explore Hoboken will provide you 
-    with the ability to adventure through this little but busy city revealing all that there is to do around town!
-  </p>
-  <p>
-    Whether you are craving a bite to eat, feeling spontaneous looking for an adventurous excursion to embark on, or site seeing with
-    the best view of the New York Skyline right by your side, Explore Hoboken facilitates your ability to find these activities and locations from the 
-    safety of your home in the blink of an eye.
-  </p>
-  <form action="/searchactivities" method="POST" id="form1" class = "center">
-    <label for="searchTerm">
-      <input
-        type="text" 
-        name="relevantSearchTerm"
-        id="searchTerm"
-        placeholder="Search Term"
-      />
+  <div class="container mt-5 card shadow">
+    <div class="mx-3 my-3 mt-3">
+      <h1>{{title}}</h1>
+      <p>Welcome to Explore Hoboken!</p>
+      <p>
+        For those that have been long time residents, visitors, and even prospective students, Explore Hoboken will provide you 
+        with the ability to adventure through this little but busy city revealing all that there is to do around town!
+      </p>
+      <p>
+        Whether you are craving a bite to eat, feeling spontaneous looking for an adventurous excursion to embark on, or site seeing with
+        the best view of the New York Skyline right by your side, Explore Hoboken facilitates your ability to find these activities and locations from the 
+        safety of your home in the blink of an eye.
+      </p>
+      <form action="/searchactivities" method="POST" id="form1" class = "center">
+        <label for="searchTerm">
+          <input
+            type="text" 
+            name="relevantSearchTerm"
+            id="searchTerm"
+            placeholder="Search Term"
+          />
 
-    </label>
-    <button
-      type="submit"
-      form="form1"
-      value="Submit"
-      class="buttonstyle"
-    >Search</button>
-  </form>
+        </label>
+        <button
+          type="submit"
+          form="form1"
+          value="Submit"
+          class="buttonstyle"
+        >Search</button>
+      </form>
+    </div>
+  </div>
 </article>
