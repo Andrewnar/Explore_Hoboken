@@ -35,3 +35,18 @@ ul {
 .card-custom {
   max-width: 31%;
 }
+
+.backgroundImg {
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/990/312/842/manhattan-fog-wallpaper-preview.jpg'); 
+  background-size: cover;
+}
+
+html {
+  height : 100%;
+}
+main{
+  position: absolute;
+    top: 40px; /* Header Height */
+    bottom: 20px; /* Footer Height */
+    width: 100%;
+}

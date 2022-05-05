@@ -7,7 +7,8 @@ const validate = require('../validation.js');
 router.get('/', async(req, res) => {
     try{
         let title = "Explore Hoboken";
-        res.render('display/finder', {title: title});
+        let mainPage = "backgroundImg";
+        res.render('display/finder', {mainPage: mainPage, title: title});
         res.status(200);
 
     } catch (e) {
