@@ -49,7 +49,11 @@ router.get('/activity/:id', async(req, res) => {
 
 function fillEmptyData(business){
   // console.log(business.hours[0]["open"]);
-  DAYS = ["M","T","W","TH","F","SA","S"]
+
+  if(!business.hours){
+      return business;
+  }
+  DAYS = ["M","T","W","TH","F","SA  ","S"]
   HOURS = [];
   for (let i=0; i<business.hours[0]["open"].length;i++){
     info = business.hours[0]["open"][i];

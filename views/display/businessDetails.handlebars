@@ -29,9 +29,13 @@
         <dt>Hours:</dt>
         <dd>
           <ul>
+        {{#if business.HOURS}}
           {{#each business.HOURS}}
               <li>{{this.day}}: {{this.start}} - {{this.end}}</li>
           {{/each}}
+          {{else}}
+          <li>N/A</li>
+          {{/if}}
           </ul>
 
         </dd>
