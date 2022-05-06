@@ -312,3 +312,7 @@ p {
 li {
   text-align: center;
 }
+
+.footer_space {
+  margin-bottom: 25px;
+}

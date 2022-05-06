@@ -31,40 +31,53 @@
                 <ul>
                 {{#each business.categories}}
                     <li>{{this.title}}</li>
+                {{else}}
+                    <li>N/A</li>  
                 {{/each}}
                 </ul>
             </dd>
 
             <dt>Price:</dt>
+            {{#if business.price}}
             <dd>{{business.price}}</dd>
+            {{else}}
+            <dd>N/A</dd>
+            {{/if}}
 
             <dt>Hours:</dt>
             <dd>
               <ul>
-            {{#if business.HOURS}}
               {{#each business.HOURS}}
                   <li>{{this.day}}: {{this.start}} - {{this.end}}</li>
-              {{/each}}
+ 
               {{else}}
               <li>N/A</li>
-              {{/if}}
+              {{/each}}
               </ul>
 
             </dd>
               <!-- {{business.hours.open}}</dd> -->
 
             <dt>Overall Rating:</dt>
+            {{#if business.rating}}
             <dd>{{business.rating}}/5</dd>
+            {{else}}
+            <dd>N/A</dd>
+            {{/if}}
 
+            {{#if business.display_phone}}
             <dt>Phone Number:</dt>
             <dd>
               <a class="phone-number" href="tel:{{business.display_phone}}">{{business.display_phone}}</a>
             </dd>
+            {{/if}}
 
+            {{#if business.location}}
             <dt>Address:</dt>
             <dd> 
               <a class="address" href="http://maps.google.com/maps?q={{business.location.address1}}+{{business.location.city}}+{{business.location.state}}" target="_blank">{{business.location.address1}} {{business.location.city}}, {{business.location.state}}</a>
             </dd>
+            {{/if}}
         </dl>
       </div>
   <footer>
@@ -92,10 +105,11 @@
       </script>
       <div class="links">
         <div class="return-link">
-          <a class="return-results-link" href="javascript:history.back()">Return to results!</a>
+          <a class="btn btn-outline-secondary footer_space" href="javascript:history.back()">Return to results</a>
+          <a class="btn btn-outline-secondary footer_space" href="/">Make Another Search</a>
         </div>
         <div class="return-link">
-            <a class="another-search-link" href="/">Make Another Search!</a>
+
         </div>
       </div>
     </div>
