@@ -90,32 +90,32 @@ ul {
   -webkit-animation: fadeIn 4s;
   -moz-animation: fadeIn 3s;
   -o-animation: fadeIn 3s;
-  -ms-animation: fadeIn 4s;
+  -ms-animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
   0% {opacity:0;}
-  100% {opacity:1;}
+  100% {opacity:92%;}
 }
 
 @-moz-keyframes fadeIn {
   0% {opacity:0;}
-  100% {opacity:1;}
+  100% {opacity:92%;}
 }
 
 @-webkit-keyframes fadeIn {
   0% {opacity:0;}
-  100% {opacity:1;}
+  100% {opacity:92%;}
 }
 
 @-o-keyframes fadeIn {
   0% {opacity:0;}
-  100% {opacity:1;}
+  100% {opacity:92%;}
 }
 
 @-ms-keyframes fadeIn {
   0% {opacity:0;}
-  100% {opacity:1;}
+  100% {opacity:92%;}
 }
 
 .finder-header {
