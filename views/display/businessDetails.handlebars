@@ -47,10 +47,14 @@
             <dd>{{business.rating}}</dd>
 
             <dt>Phone Number:</dt>
-            <dd>{{business.display_phone}}</dd>
+            <dd>
+              <a class="phone-number" href="tel:{{business.display_phone}}">{{business.display_phone}}</a>
+            </dd>
 
             <dt>Address:</dt>
-            <dd>{{business.location.address1}} {{business.location.city}}, {{business.location.state}}</dd>
+            <dd> 
+              <a class="address" href="http://maps.google.com/maps?q={{business.location.address1}}+{{business.location.city}}+{{business.location.state}}" target="_blank">{{business.location.address1}} {{business.location.city}}, {{business.location.state}}</a>
+            </dd>
         </dl>
       </div>
   <footer>
