@@ -121,7 +121,7 @@ body {
   flex-direction: column;
   flex: 1;
   max-width: 30%;
-  /* max-height: 375px; */
+  max-height: 375px;
   height: 500px;
   border-radius: 25px;
   justify-content: center;
@@ -246,6 +246,7 @@ p {
 .card-img-top {
   margin-top: 20px;
   border-radius: 25px;
+  max-height: 80%;
 }
 
 #myBtn {
