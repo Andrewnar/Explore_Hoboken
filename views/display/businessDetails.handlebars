@@ -14,8 +14,11 @@
       <h1 class="business-title">{{title}}</h1>
     <!-- the top bar covers the title for each page, I am not sure how to fix but just adding a second one looks good  -->
 
-
+      {{#if business.image_url}}
       <img class="business-image" alt="{{title}}" src={{business.image_url}}>
+      {{else}}
+      <img class="business-image" src= "https://jorgeraziel.com/wp-content/themes/consultix/images/no-image-found-360x260.png" alt="No Image Found" />
+      {{/if}}
       {{!-- <p class="error">images seem to be a problem</p> --}}
 
       <!--
