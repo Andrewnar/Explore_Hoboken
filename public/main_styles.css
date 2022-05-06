@@ -104,9 +104,10 @@ body {
 .center-found {
   font-family: 'Chivo', sans-serif;
   text-align: center;
-  font-size: 50px;
+  font-size: 75px;
   height: 100%;
   animation: fadeIn 2s;
+  font-weight: bold;
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 1s;
   -o-animation: fadeIn 1s;
