@@ -17,7 +17,7 @@
         to browse a multitude of recommended results!
       </p>
       <p class = "error"> {{error}} </p>
-      <form action="/searchactivities" method="POST" id="form1" class = "center-finder">
+      <form action="/searchactivities" method="POST" id="form1" class = "form1 center-finder">
         <label for="category">Select a category to search in</label>
           <select name="category" id="category">
             <option value="all">All</option>
@@ -38,14 +38,13 @@
             placeholder="Search Term">
         </div>
 
-        <br>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center space_top">
           <button
           type="submit"
           form="form1"
           value="Submit"
-          class="buttonstyle">
+          class="btn btn-outline-secondary">
           Search</button>
         </div>
         

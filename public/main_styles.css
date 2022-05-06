@@ -60,6 +60,7 @@ body {
   opacity: 1;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.6);
+  margin: 5px;
 }
 
 /* .entry {
@@ -150,8 +151,15 @@ body {
   -moz-animation: fadeIn 1s;
   -o-animation: fadeIn 1s;
   -ms-animation: fadeIn 1s;
+  margin-bottom: 25px;
 }
 
+.form1 {
+  margin-bottom: 25px;
+}
+article {
+  margin-bottom: 15px;
+}
 .card-title {
   text-align: center;
 }
@@ -315,4 +323,9 @@ li {
 
 .footer_space {
   margin-bottom: 25px;
+}
+
+.space_top {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
