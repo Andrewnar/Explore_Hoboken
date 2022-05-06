@@ -86,11 +86,11 @@ ul {
   font-family: 'Chivo', sans-serif;
   text-align: center;
   border-radius: 25px;
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 4s;
-  -moz-animation: fadeIn 3s;
-  -o-animation: fadeIn 3s;
-  -ms-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
