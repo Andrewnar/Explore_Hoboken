@@ -66,7 +66,8 @@ router.get('/activity/:id', async(req, res) => {
 
         let business = await apiData.getActivitiesById(req.params.id);
         business = fillEmptyData(business);
-        res.render('display/businessDetails', {business: business, title: business.name});
+        let mainPage = "backgroundImg";
+        res.render('display/businessDetails', {mainPage: mainPage, business: business, title: business.name});
         res.status(200);
 
     } catch (e) {
