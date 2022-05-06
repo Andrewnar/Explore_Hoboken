@@ -30,7 +30,8 @@ img {
   /* width: 400px;
   height: 300px; */
   /* width: 2000px; */
-  height: 20vmax;
+  /* height: 75%; */
+  height: 15vmax;
   display: block;
   /* margin: 10px auto; */
   border-radius: 25px;
