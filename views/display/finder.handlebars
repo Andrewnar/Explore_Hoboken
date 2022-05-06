@@ -1,3 +1,4 @@
+ <article>
  <div class="container mt-5 my-auto card shadow card-finder">
     <div class="mx-auto my-3 mt-3">
       <h1 class="finder-header">{{title}}</h1>
@@ -28,20 +29,26 @@
 
         <br>
 
+        <div class="mt-2">
         <label for="searchTerm"> Search: </label>
           <input
             type="text" 
             name="relevantSearchTerm"
             id="searchTerm"
             placeholder="Search Term">
-        
+        </div>
+
         <br>
-        <button
+
+        <div class="d-flex justify-content-center">
+          <button
           type="submit"
           form="form1"
           value="Submit"
           class="buttonstyle">
           Search</button>
+        </div>
+        
       </form>
     </div>
   </div>
