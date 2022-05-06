@@ -5,7 +5,11 @@
       <div class="row mt-12 justify-content-center" data-masonry='{"percentPosition": true }'>
       {{#each activities}}
         <div class="card card-custom mx-2 mb-3">
-          <img class="card-img-top" src= {{this.image_url}} alt="Card image cap" />
+          {{#if this.image_url}}
+          <img class="card-img-top" src= {{this.image_url}} alt= {{this.name}} />
+          {{else}}
+          <img class="card-img-top" src= "https://jorgeraziel.com/wp-content/themes/consultix/images/no-image-found-360x260.png" alt="No Image Found" />
+          {{/if}}
           <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
             <p class="card-text">This is a wider card with supporting text below
