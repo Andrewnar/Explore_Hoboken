@@ -84,7 +84,7 @@ function fillEmptyData(business){
   if(!business.hours){
       return business;
   }
-  DAYS = ["M","T","W","TH","F","SA  ","S"]
+  DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
   HOURS = [];
   for (let i=0; i<business.hours[0]["open"].length;i++){
     info = business.hours[0]["open"][i];
