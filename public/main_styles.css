@@ -262,14 +262,21 @@ p {
   color: #F1F1FA;
 }
 
+.links {
+  margin: 20px;
+  border-radius: 25px;
+  /* background-color: blanchedalmond; */
+}
+
 .return-link {
-  height: 200px;
+  /* height: 200px; */
   text-align: center;
+  font-size: large;
 }
 .another-search-link {
-  margin-top: 100%;
+  /* margin-top: 100%; */
   font-family: 'Chivo', sans-serif;
-  font-size: xx-large;
+  font-size: large;
   text-decoration: none;
 }
 
