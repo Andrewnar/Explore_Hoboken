@@ -1,5 +1,5 @@
 <section>
-  <h2 class="center">Results for: {{searchDetails}}</h2>
+  <h2 class="center-found">Results for: {{searchDetails}}</h2>
   <ul>
     <div class="container">
       <div class="row mt-12 justify-content-center" data-masonry='{"percentPosition": true }'>
@@ -32,6 +32,32 @@
       </div>
     </div>
   </ul>
+  <footer> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
 
-  <a href="/">Make Another Search!</a>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <div class="return-link">
+      <a class="another-search-link" href="/">Make Another Search!</a>
+    </div>
+  </footer>
+ 
 </section>
