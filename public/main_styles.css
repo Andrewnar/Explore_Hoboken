@@ -29,12 +29,12 @@ img {
   border-radius: 25px;
 }
 
-/* img {
-  background: #F1F1FA;
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-} */
+body {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
 /* https://frontendresource.com/css-button-templates/ */
 .buttonstyle {
@@ -199,6 +199,7 @@ html {
 }
 main{
   /* position: relative; */
+  font-family: 'Chivo', sans-serif;
   top: 40px; /* Header Height */
   bottom: 20px; /* Footer Height */
   width: 100%;
@@ -266,4 +267,27 @@ p {
   text-decoration: none;
   color: black;
   font-size: 25px;
+}
+
+.business {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+.business-title {
+  font-size: 100px;
+}
+
+.business-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 100%;s */
+}
+
+.business-details {
+  font-size: 20px;
 }

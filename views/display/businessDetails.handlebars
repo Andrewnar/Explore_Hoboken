@@ -1,56 +1,91 @@
-<article>
-
-    <h1>{{title}}</h1>
-    <h1>{{title}}</h1>
+<article class="business">
+  <div class="container mt-5 my-auto card shadow card-finder">
+    <div class="mx-auto my-3 mt-3">
+      {{!-- <h1 class="finder-header">{{title}}</h1> --}}
+      <h1 class="business-title">{{title}}</h1>
     <!-- the top bar covers the title for each page, I am not sure how to fix but just adding a second one looks good  -->
 
 
-    <img alt="{{title}}" src={{business.image_url}}>
-    <p class="error">images seem to be a problem</p>
+      <img class="business-image" alt="{{title}}" src={{business.image_url}}>
+      {{!-- <p class="error">images seem to be a problem</p> --}}
 
-    <!--
-        These are going to have to be checked if they exist
-        Certain object keys sometimes don't exist (like price)
-        Also feel free to add/remove any of these fields, just samples
-    -->
-    <dl>
-        <dt>Categories:</dt>
-        <dd>
-            <ul>
-            {{#each business.categories}}
-                <li>{{this.title}}</li>
-            {{/each}}
-            </ul>
-        </dd>
+      <!--
+          These are going to have to be checked if they exist
+          Certain object keys sometimes don't exist (like price)
+          Also feel free to add/remove any of these fields, just samples
+      -->
+      <div class="business-details">
+        <dl>
+            <dt>Categories:</dt>
+            <dd>
+                <ul>
+                {{#each business.categories}}
+                    <li>{{this.title}}</li>
+                {{/each}}
+                </ul>
+            </dd>
 
-        <dt>Price:</dt>
-        <dd>{{business.price}}</dd>
+            <dt>Price:</dt>
+            <dd>{{business.price}}</dd>
 
-        <dt>Hours:</dt>
-        <dd>
-          <ul>
-        {{#if business.HOURS}}
-          {{#each business.HOURS}}
-              <li>{{this.day}}: {{this.start}} - {{this.end}}</li>
-          {{/each}}
-          {{else}}
-          <li>N/A</li>
-          {{/if}}
-          </ul>
+            <dt>Hours:</dt>
+            <dd>
+              <ul>
+            {{#if business.HOURS}}
+              {{#each business.HOURS}}
+                  <li>{{this.day}}: {{this.start}} - {{this.end}}</li>
+              {{/each}}
+              {{else}}
+              <li>N/A</li>
+              {{/if}}
+              </ul>
 
-        </dd>
-          <!-- {{business.hours.open}}</dd> -->
+            </dd>
+              <!-- {{business.hours.open}}</dd> -->
 
-        <dt>Overall Rating:</dt>
-        <dd>{{business.rating}}</dd>
+            <dt>Overall Rating:</dt>
+            <dd>{{business.rating}}</dd>
 
-        <dt>Phone Number:</dt>
-        <dd>{{business.display_phone}}</dd>
+            <dt>Phone Number:</dt>
+            <dd>{{business.display_phone}}</dd>
 
-        <dt>Address:</dt>
-        <dd>{{business.location.address1}} {{business.location.city}}, {{business.location.state}}</dd>
-    </dl>
+            <dt>Address:</dt>
+            <dd>{{business.location.address1}} {{business.location.city}}, {{business.location.state}}</dd>
+        </dl>
+      </div>
+  <footer>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
 
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+      <div class="return-link">
+        <a class="return-results-link" href="/">Return to results!</a>
+      </div>
+    </div>
+  </div>
+    
+    <div class="return-link">
+      <a class="another-search-link" href="/">Make Another Search!</a>
+    </div>
+</footer>
 <!-- Gonna want a go back to search results button -->
 
 </article>

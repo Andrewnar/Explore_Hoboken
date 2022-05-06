@@ -2,8 +2,6 @@ async function checkString(str, par) {
     str = str.trim();
     if(!str || str === undefined || typeof str !== "string") throw `${par} must exist and be a string.`;
     if(str.replace(/\s/g, '').length === 0) throw  `${par} must have character count > 0`;
-    const regex = /^[a-zA-Z0-9 ]+$/i;
-    if(!str.match(regex)) throw `${par} may only contain alphanumeric characters`;
     return str;
 }
 

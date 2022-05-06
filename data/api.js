@@ -5,7 +5,8 @@ const validation = require("../validation.js");
   Get an activity by its id
 */
 async function getActivitiesById(id) {
-  id = await validation.checkString(id, "id");
+  //  need to still error check, but not for empty spaces
+  // id = await validation.checkString(id, "id");
 
   //set header
   const config = {
