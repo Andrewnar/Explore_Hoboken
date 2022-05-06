@@ -51,11 +51,10 @@ body {
 /* https://frontendresource.com/css-button-templates/ */
 .buttonstyle {
   font-family: 'Chivo', sans-serif;
-  position: absolute;
+  position: fixed;
   outline: none;
   text-decoration: none;
   border-radius: 50px;
-  display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -320,6 +319,7 @@ p {
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 50px;
+  height: 80vw;
 }
 
 .business-title {
