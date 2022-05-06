@@ -1,13 +1,19 @@
 {
-    "name": "cs-546-lab-8",
+    "name": "explore-hoboken",
     "version": "1.0.0",
-    "description": "My lab 8 module",
+    "description": "CS 545 Final Project",
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node app.js"
     },
-    "author": "Andrew Narvaez 10463134",
+    "contributors": [
+        "Ryan Chin",
+        "Ryan Clark",
+        "Matthew Hullstrung",
+        "Roshan Narma",
+        "Andrew Narvaez"
+    ],
     "license": "MIT",
     "dependencies": {
         "axios": "^0.21.4",
