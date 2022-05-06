@@ -49,7 +49,8 @@ router.post('/searchactivities', async(req, res) => {
                 if(!searchDetails) resultsMsg = 'Browse All'
                 else resultsMsg = 'Results for: ' + searchDetails;
     }
-        res.render('display/found', {resultsMsg: resultsMsg, activities: activities, searchDetails: searchDetails, title: "Results"})
+        let mainPage = "backgroundImg";
+        res.render('display/found', {mainPage: mainPage, resultsMsg: resultsMsg, activities: activities, searchDetails: searchDetails, title: "Results"})
         res.status(200);
 
     } catch (e) {
