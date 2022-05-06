@@ -165,8 +165,14 @@ body {
 .form1 {
   margin-bottom: 25px;
 }
+
 article {
+
   margin-bottom: 15px;
+}
+
+.article_Home {
+  margin-top: 12vh;
 }
 .card-title {
   text-align: center;
