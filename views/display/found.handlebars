@@ -6,7 +6,9 @@
       {{#each activities}}
         <div class="card card-custom mx-2 mb-3">
           {{#if this.image_url}}
-          <img class="card-img-top" src= {{this.image_url}} alt= {{this.name}} />
+          <a href="/activity/{{this.id}}">
+            <img class="card-img-top" src= {{this.image_url}} alt= {{this.name}} />
+          </a>
           {{!-- <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300" /> --}}
           {{else}}
           <img class="card-img-top" src= "https://jorgeraziel.com/wp-content/themes/consultix/images/no-image-found-360x260.png" alt="No Image Found" />
