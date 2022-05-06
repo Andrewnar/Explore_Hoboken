@@ -7,20 +7,16 @@
         with the ability to adventure through this little but busy city revealing all that there is to do around town!
       </p>
       <p>
-        Whether you are craving a bite to eat, feeling spontaneous looking for an adventurous excursion to embark on, or site seeing with
-        the best view of the New York Skyline right by your side, Explore Hoboken facilitates your ability to find these activities and locations from the 
-        safety of your home in the blink of an eye.
+        Whether you are craving a bite to eat, feeling spontaneous seeking adventure, or site seeing the New York Skyline,
+        aesthetic piers, or the many parks, Explore Hoboken facilitates your ability to find these activities and locations from the 
+        safety of your home and in the blink of an eye.
       </p>
-      <form action="/searchactivities" method="POST" id="form1" class = "center">
-        <label for="searchTerm"> Search: </label>
-          <input
-            type="text" 
-            name="relevantSearchTerm"
-            id="searchTerm"
-            placeholder="Search Term">
-        
-        <br>
-
+      <p>
+        Simply choose a category you want to explore and input a search term to narrow your results, or leave it blank
+        to browse a multitude of recommended results!
+      </p>
+      <p class = "error"> {{error}} </p>
+      <form action="/searchactivities" method="POST" id="form1" class = "center-finder">
         <label for="category">Select a category to search in</label>
           <select name="category" id="category">
             <option value="all">All</option>
@@ -32,6 +28,14 @@
 
         <br>
 
+        <label for="searchTerm"> Search: </label>
+          <input
+            type="text" 
+            name="relevantSearchTerm"
+            id="searchTerm"
+            placeholder="Search Term">
+        
+        <br>
         <button
           type="submit"
           form="form1"

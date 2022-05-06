@@ -20,32 +20,42 @@ router.get('/', async(req, res) => {
 router.post('/searchactivities', async(req, res) => {
     try{
         let searchDetails = req.body.relevantSearchTerm;
-        searchDetails = await validate.checkString(searchDetails, "Show details");
-
+        // searchDetails = await validate.checkString(searchDetails, "Search Term");
         let activities;
         //handle category selection
         switch(req.body.category) {
             case "food":
                 activities = await apiData.searchFoodActivities(searchDetails);
+                if(!searchDetails) resultsMsg = 'Browse Food'
+                else resultsMsg = 'Results for: ' + searchDetails;
                 break;
             case "entertainment":
                 activities = await apiData.searchEntertainmentActivities(searchDetails);
+                if(!searchDetails) resultsMsg = 'Browse Entertainment'
+                else resultsMsg = 'Results for: ' + searchDetails;
                 break;
             case "active":
                 activities = await apiData.searchActiveActivities(searchDetails);
+                if(!searchDetails) resultsMsg = 'Browse Activities'
+                else resultsMsg = 'Results for: ' + searchDetails;
                 break;
             case "nightlife":
                 activities = await apiData.searchNightLifeActivities(searchDetails);
+                if(!searchDetails) resultsMsg = 'Browse Nightlife'
+                else resultsMsg = 'Results for: ' + searchDetails;
                 break;
             default: //using default for all or if somehow select gets sent invalid data
                 activities = await apiData.searchAllActivities(searchDetails);
-        }
-
-        res.render('display/found', {activities: activities, searchDetails: searchDetails, title: "Results"})
+                if(!searchDetails) resultsMsg = 'Browse All'
+                else resultsMsg = 'Results for: ' + searchDetails;
+    }
+        res.render('display/found', {resultsMsg: resultsMsg, activities: activities, searchDetails: searchDetails, title: "Results"})
         res.status(200);
 
     } catch (e) {
-        res.render('display/error', {error: e, title: "ERROR PAGE"});
+        let title = "Explore Hoboken";
+        let mainPage = "backgroundImg";
+        res.render('display/finder', {mainPage: mainPage, title: title, error: e});
         res.status(404);
     }
 });

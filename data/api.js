@@ -22,12 +22,12 @@ async function getActivitiesById(id) {
   return result;
 }
 
-
 /*
   Get all businesses by search name
 */
 async function searchAllActivities(name) {
-  name = await validation.checkString(name, "'All' search term");
+  //  need to still error check, but not for empty spaces
+  // name = await validation.checkString(name, "'All' search term");
 
   //set header
   const config = {
@@ -50,7 +50,8 @@ async function searchAllActivities(name) {
   Search activities by food
 */
 async function searchFoodActivities(name) {
-  name = await validation.checkString(name, "'Food' search term");
+  //  need to still error check, but not for empty spaces
+  // name = await validation.checkString(name, "'Food' search term");
 
   //set header
   const config = {
@@ -73,7 +74,8 @@ async function searchFoodActivities(name) {
   Search activities by Active Life
 */
 async function searchActiveActivities(name) {
-  name = await validation.checkString(name, "'Active' search term");
+  //  need to still error check, but not for empty spaces
+  // name = await validation.checkString(name, "'Active' search term");
 
   //set header
   const config = {
@@ -96,7 +98,8 @@ async function searchActiveActivities(name) {
   Search activities by Arts and Entertainment
 */
 async function searchEntertainmentActivities(name) {
-  name = await validation.checkString(name, "'Arts and Entertainment' search term");
+  //  need to still error check, but not for empty spaces
+  // name = await validation.checkString(name, "'Arts and Entertainment' search term");
 
   //set header
   const config = {
@@ -119,7 +122,8 @@ async function searchEntertainmentActivities(name) {
   Search activities by Nightlife
 */
 async function searchNightLifeActivities(name) {
-  name = await validation.checkString(name, "'Nightlife' search term");
+  //  need to still error check, but not for empty spaces
+  // name = await validation.checkString(name, "'Nightlife' search term");
 
   //set header
   const config = {
@@ -136,7 +140,6 @@ async function searchNightLifeActivities(name) {
 
   return results;
 }
-
 
 module.exports = {
   getActivitiesById,
