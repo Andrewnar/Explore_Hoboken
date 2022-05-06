@@ -1,10 +1,8 @@
-<h1>{{title}}</h1>
-
 <section>
-  <h2 class="center">Showing results for: {{searchDetails}}</h2>
+  <h2 class="center">Results for: {{searchDetails}}</h2>
   <ul>
     <div class="container">
-      <div class="row mt-5 justify-content-center" data-masonry='{"percentPosition": true }'>
+      <div class="row mt-12 justify-content-center" data-masonry='{"percentPosition": true }'>
       {{#each activities}}
         <div class="card card-custom mx-2 mb-3">
           <img class="card-img-top" src= {{this.image_url}} alt="Card image cap" />

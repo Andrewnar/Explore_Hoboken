@@ -32,8 +32,20 @@ ul {
   padding-left: 10px;
 }
 
+.center {
+  font-size: xx-large;
+  text-align: center;
+}
+
 .card-custom {
   max-width: 31%;
+  border-radius: 25px;
+  /* box-shadow: blanchedalmond; */
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card-finder {
+  border-radius: 25px;
 }
 
 .backgroundImg {
@@ -51,7 +63,21 @@ main{
     width: 100%;
 }
 
-.card:hover{
+.card-custom:hover{
   transform: scale(1.05);
+  transition: 0.65s;
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.row {
+  width: 100%;
+}
+
+.mt-12 {
+  width: 100%;
+}
+
+.card-img-top {
+  margin-top: 20px;
+  border-radius: 25px;
 }
