@@ -5,6 +5,9 @@ const static = express.static(__dirname + "/public");
 const configRoutes = require("./routes");
 const exphbs = require("express-handlebars");
 
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
 app.use("/public", static);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +25,8 @@ app.set("view engine", "handlebars");
 
 configRoutes(app);
 
-app.listen(3000, () => {
+app.listen(PORT, HOST, () => {
   console.log("We've now got a server!");
-  console.log("Your routes will be running on http://localhost:3000");
+  console.log(`Running on http://${HOST}:${PORT}`);
+  // console.log("Your routes will be running on http://localhost:3000");
 });
