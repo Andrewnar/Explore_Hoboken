@@ -1,22 +1,19 @@
 # Explore_Hoboken
-Project for CS 545 - Human Computer Interaction. \
-Andrew Narvaez, Ryan Chin, Matthew Hullstrung, Ryan Clark, Roshan Narma
+Continuation of Project in CS 545 - Human Computer Interaction. \
+Original Members: Andrew Narvaez, Ryan Chin, Matthew Hullstrung, Ryan Clark, Roshan Narma
 
-## Available Scripts
+AWS Team: Andrew Narvaez, Ryan Potenza, Michael Bearint
 
-In the project directory, you can run:
+## To run the application
 
-### `npm install`
+Downlaod Docker
 
-Downloads all dependencies and ensures they are up to date.
+Create Docker Image:
 
-### `npm start`
+`docker build . -t [image_name]`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Run Docker Container:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`docker run -p 49160:8080 -d [image_name]`
 
-See the demo run through here!
-https://youtu.be/imZcqdgeyBU
+And Voila! Your code should now be running on: `localhost:8080`
